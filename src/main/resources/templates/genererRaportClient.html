@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Gestion Cabinet Médical</title>
+    <link th:href="@{/bootstrap-4.0.0-dist/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .container-fluid {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            background-color: #75a7d9;
+            color: white;
+            min-width: 200px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var clientId = document.getElementById("clientId").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/reportclient/" + clientId, true);
+            xhr.responseType = "blob";
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var blob = new Blob([xhr.response], { type: "application/pdf" });
+                    var link = document.createElement("a");
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = "rapport_client.pdf";
+                    link.click();
+                } else {
+                    alert("Erreur lors de la génération du rapport.");
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Gérer vos Rendez-vous</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="deconnexion">
+                    <button class="btn btn-connexion btn-outline-primary">Se déconnecter</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="sidebar">
+        <h4>Menu</h4>
+        <a href="/VoirRDVSelonJour">Voir Les Rendez Vous Du Jour</a>
+        <a href="/VoirTousRDV">Voir Tous rendez vous</a>
+        <a href="/VoirDossierMedicale3">Voir Le Dossier Medicale D'un Patient</a>
+        <a href="/reportclient1">Imprimer les factures</a>
+    </div>
+    <div class="content">
+        <h1>Generate Client Report</h1>
+        <form id="reportForm" onsubmit="submitForm(event)">
+            <label for="clientId">Client ID:</label>
+            <input type="number" id="clientId" name="clientId" required>
+            <button type="submit">Générer Rapport</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

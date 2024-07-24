@@ -1,0 +1,169 @@
+#logo {
+    height: 50px;
+    width: 50px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%; /* Ajuster cette largeur selon vos besoins */
+    margin: auto; /* Centrer horizontalement */
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Opacité du fond */
+    pointer-events: none; /* Permet aux clics de passer à travers l'overlay */
+}
+
+#imagePrincipale {
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+
+.button {
+    /*position: absolute;*/
+     /*top: 10%; Ajuster pour positionner verticalement */
+    margin-right: 10px; /* Ajuster pour positionner horizontalement */
+    margin-left:90px;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond optionnelle */
+    padding: 10px 20px; /* Ajuster le padding selon vos préférences */
+    border-radius: 5px;
+    z-index: 1; /* Assure que le bouton est au-dessus de l'overlay */
+    font-size: 16px; /* Ajuster la taille du texte du bouton */
+    text-align: center;
+}
+
+.social-icons {
+    margin-left: auto; /* Aligner les icônes sociales à droite */
+}
+
+.btn-connexion {
+    margin-top : -18px;/* Ajuster pour positionner horizontalement */
+    margin-left:43%;
+    color: #007bff;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+.btn-connexion:hover {
+    background-color:  #3f91e7;
+    color: white;
+}
+
+.social-icons a {
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.social-icons img {
+    width: 24px; /* Ajuster la taille selon vos besoins */
+    height: 24px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#parag1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1; /* Assure que le texte est au-dessus de l'overlay */
+    font-size: 40px; /* Ajuster la taille du texte */
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    top: 80%; /* Ajuster pour placer le bouton sous le paragraphe */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond optionnelle */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1; /* Assure que le bouton est au-dessus de l'overlay */
+    font-size: 20px; /* Ajuster la taille du texte du bouton */
+    text-align: center;
+}
+
+.container-fluid {
+    padding: 20px;
+    background-color: rgb(197, 197, 248);
+}
+
+.container-fluid .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-fluid .col-md-6 {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container-fluid .col-md-6:hover {
+    background-color: rgba(197, 197, 248, 0.7); /* Changement de couleur d'arrière-plan au survol */
+}
+
+.container-fluid h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.container-fluid p {
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.col-md-4 {
+    background-color: rgb(87, 87, 207);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative; /* Nécessaire pour l'élément ::after */
+}
+
+.col-md-4 p {
+    text-align: center;
+    color: rgb(247, 242, 242);
+}
+
+.cont::after {
+    content: ''; /* Nécessaire pour ::after */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Opacité du fond */
+    pointer-events: none;
+    z-index: -1; /* Place l'overlay derrière le contenu */
+}

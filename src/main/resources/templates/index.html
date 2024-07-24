@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/style1.css" rel="stylesheet">
+    <style>
+        nav{
+            background-color: #495057;
+        }
+        .contact-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #555;
+            text-align: center;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .contact-info li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-follow {
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #555;
+            text-align: center;
+        }
+
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-links li {
+            margin: 0 0.5rem;
+        }
+
+        .social-link {
+            font-size: 1.2rem;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: #0056b3;
+        }
+
+    </style>
+    <title>accueil</title>
+</head>
+<body>
+      <div class="image-container">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+              <ul class="navbar-nav social-icons d-flex align-items-center">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/loginPersonnels"><button class="btn btn-connexion btn-outline-primary">Se connecter</button></a>
+                  </li>
+              </ul>
+
+          </nav>
+        <img id="imagePrincipale" src="img/medecins.jpg" alt="Image Principale">
+        <p id="parag1">Bienvenue sur notre site Dentex. Planifiez dès maintenant votre rendez-vous en ligne avec nos experts de la santé.</p>
+        <a class="btn btn-outline-primary" href="/authentification">Rendez-vous</a>
+    </div>
+    <div class="container">
+        <div class="row mt-4 hover-effect">
+            <div class="col-md-6">
+                <img id="cabinet-image" src="img/cab.jpg" alt="Image du cabinet" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h1>À propos de Notre Cabinet Dentaire</h1>
+                <p>Bienvenue chez Dentex, où nous nous engageons à fournir des soins dentaires de haute qualité dans une ambiance chaleureuse et accueillante. Notre mission est de garantir la santé bucco-dentaire de nos patients grâce à des traitements personnalisés et à la pointe de la technologie.</p>
+            </div>
+        </div>
+        <div id="div1" class="row mt-4 hover-effect">
+            <div class="col-md-6">
+                <h2>Notre Histoire</h2>
+                <p>Fondé en 2005, Dentex a été créé pour offrir des soins dentaires accessibles et de qualité à notre communauté. Depuis nos débuts, nous avons évolué en intégrant des technologies modernes et en élargissant notre gamme de services pour répondre à tous vos besoins dentaires.</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Nos Valeurs</h2>
+                <p>Chez Dentex, nous croyons en l'importance de la compassion, de la qualité des soins et de l'éducation des patients. Nous nous efforçons de créer une expérience positive pour chaque patient en offrant des soins personnalisés et en expliquant chaque étape du traitement.</p>
+            </div>
+        </div>
+        <div class="row mt-4 hover-effect">
+            <div class="col-md-6">
+              <img id="imageMed" src="img/med.jpg" alt="Image Medecins" class="img-fluid">
+              <p></p>
+              <p></p>
+              <h4 class="center" id="p1">"Bonjour et bienvenue à notre clinique ! N'hésitez pas à nous contacter pour toute question."</h4>
+            </div>
+            
+            <div class="col-md-6">
+                <h2>Notre Équipe</h2>
+                <div class="team-member">
+                    <h3>Dr. Jean Dupont</h3>
+                    <p>Chirurgien-Dentiste Principal</p>
+                    <p>Le Dr. Dupont a plus de 20 ans d'expérience en soins dentaires et est spécialisé en implants dentaires et orthodontie. Il est passionné par l'amélioration de la santé bucco-dentaire de ses patients.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Marie Martin</h3>
+                    <p>Hygiéniste Dentaire</p>
+                    <p>Marie est dédiée à aider nos patients à maintenir une bonne hygiène bucco-dentaire. Elle travaille chez Dentex depuis 10 ans et est connue pour son approche douce et rassurante.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Jacques Lemoine</h3>
+                    <p>Assistant Dentaire</p>
+                    <p>Jacques assiste nos dentistes dans tous les aspects des soins aux patients. Avec une attention particulière aux détails et une attitude amicale, il garantit que chaque visite se déroule sans accroc et de manière confortable pour nos patients. Il fait partie de l'équipe Dentex depuis 5 ans.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 hover-effect">
+            <div class="col-md-6">
+                <h2>Nos Services</h2>
+                <p>Nous proposons une gamme complète de services dentaires, incluant :</p>
+                <ul>
+                    <li><strong>Soins Dentaires Généraux</strong> : examens réguliers, nettoyages, plombages, etc.</li>
+                    <li><strong>Orthodontie</strong> : traitements pour aligner les dents, y compris les appareils dentaires et les aligneurs invisibles.</li>
+                    <li><strong>Implants Dentaires</strong> : remplacement des dents manquantes avec des implants de haute qualité.</li>
+                    <li><strong>Esthétique Dentaire</strong> : blanchiment des dents, facettes, etc.</li>
+                    <li><strong>Soins Parodontaux</strong> : traitement des maladies des gencives pour prévenir la perte de dents.</li>
+                </ul>
+                <p>Nos traitements sont adaptés à chaque patient pour assurer le meilleur résultat possible.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="image-container1">
+                    <img id="image1" src="img/soins-dentaires.jpg" alt="Image Medecins">
+                </div>
+                <div class="image-container1">
+                    <img id="image2" src="img/images.jpg" alt="Image Medecins">
+                </div>
+        </div>
+        <div id ="div3" class="row mt-4 hover-effect">
+            <div class="col-md-12">
+                <h2>Témoignages</h2>
+                <blockquote>
+                    <p>"Grâce à Dentex, j'ai retrouvé le sourire et la confiance en moi. L'équipe est incroyable et très professionnelle." – Sophie Durand</p>
+                </blockquote>
+                <blockquote>
+                    <p>"Je recommande vivement Dentex pour leurs soins attentionnés et leur expertise. Ils ont toujours une approche rassurante." – Marc Leblanc</p>
+                </blockquote>
+            </div>
+        </div>
+            <div class="container">
+            <div class="row mt-4 mb-4 hover-effect">
+                <div class="col-md-12">
+                    <h2 class="contact-title">Contactez-Nous</h2>
+                    <p class="contact-intro">Pour en savoir plus sur nos services ou pour prendre rendez-vous, veuillez nous contacter à :</p>
+                    <ul class="contact-info">
+                        <li><strong>Adresse :</strong> 123 Rue de la Santé, 75000 Paris</li>
+                        <li><strong>Téléphone :</strong> +33 1 23 45 67 89</li>
+                        <li><strong>Email :</strong> contact@dentex.fr</li>
+                    </ul>
+                    <p class="contact-follow">Vous pouvez également nous suivre sur nos réseaux sociaux pour les dernières nouvelles et conseils en santé dentaire :</p>
+                    <ul class="social-links">
+                        <li><a href="#" class="social-link">Facebook</a></li>
+                        <li><a href="#" class="social-link">Instagram</a></li>
+                        <li><a href="#" class="social-link">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <script src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
